@@ -10,8 +10,8 @@ public class Robot extends TimedRobot {
 
   // Variables
   private final XboxController controller = new XboxController(0);
-  private final CANSparkMax motor1 = new CANSparkMax(25, MotorType.kBrushless);
-  private final CANSparkMax motor2 = new CANSparkMax(26, MotorType.kBrushless);
+  private final CANSparkMax motor1 = new CANSparkMax(41, MotorType.kBrushless);
+  private final CANSparkMax motor2 = new CANSparkMax(42, MotorType.kBrushless);
 
   // Teleop Init
   @Override
