@@ -1,7 +1,6 @@
 package frc.robot;
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
 
@@ -9,22 +8,15 @@ import edu.wpi.first.wpilibj.XboxController;
 public class Robot extends TimedRobot {
 
   // Variables
+  private final WPI_TalonFX motor1 = new WPI_TalonFX(22);
   private final XboxController controller = new XboxController(0);
-  private final CANSparkMax motor1 = new CANSparkMax(41, MotorType.kBrushless);
-  private final CANSparkMax motor2 = new CANSparkMax(42, MotorType.kBrushless);
 
-  // Teleop Init
-  @Override
-  public void teleopInit() {
-
-  }
-
-  // Teleop Periodic
+  // Teleop periodic
   @Override
   public void teleopPeriodic() {
     motor1.set(controller.getAButton() ? 0.5 : 0.0);
-    motor2.set(controller.getBButton() ? 0.5 : 0.0);
   }
+
 
 
 }
